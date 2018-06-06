@@ -365,6 +365,7 @@ treemode.expandChild = function (path) {
     for (var i = 1; i < path.length; i++)
         this.node.getNestedChild(path.slice(0, i)).expand(false) // expand the path
     child.expand();
+    child.setHighlight(true);
     this.content.appendChild(this.table);  // Put the table online again
   }
 };

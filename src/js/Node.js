@@ -521,6 +521,7 @@ Node.prototype.collapse = function(recurse) {
   }
 
   this.hideChilds();
+  this.setHighlight(false);
 
   // collapse childs in case of recurse
   if (recurse !== false) {
