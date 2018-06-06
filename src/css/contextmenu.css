@@ -293,7 +293,7 @@ div.jsoneditor-contextmenu button.jsoneditor-type-modes > div.jsoneditor-icon {
   font-family: arial, sans-serif;
   font-size: 11pt;
 
-  background: #3883fa;
+  background: #2c3e50;
   color: white;
 }
 
@@ -394,8 +394,8 @@ div.jsoneditor-contextmenu button.jsoneditor-type-modes > div.jsoneditor-icon {
 
 .jsoneditor-modal .jsoneditor-button-group.jsoneditor-button-group-value-asc input.jsoneditor-button-asc,
 .jsoneditor-modal .jsoneditor-button-group.jsoneditor-button-group-value-desc input.jsoneditor-button-desc {
-  background: #3883fa;
-  border-color: #3883fa;
+  background: #2c3e50;
+  border-color: #2c3e50;
   color: white;
 }
 
