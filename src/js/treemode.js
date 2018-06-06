@@ -354,6 +354,22 @@ treemode.expandAll = function () {
 };
 
 /**
+ * Expand a child node
+ * @param {String[]} path
+ * @returns null
+ */
+treemode.expandChild = function (path) {
+  var child = this.node.getNestedChild(path);
+  if (child) {
+    this.content.removeChild(this.table);  // Take the table offline
+    for (var i = 1; i < path.length; i++)
+        this.node.getNestedChild(path.slice(0, i)).expand(false) // expand the path
+    child.expand();
+    this.content.appendChild(this.table);  // Put the table online again
+  }
+};
+
+/**
  * Collapse all nodes
  */
 treemode.collapseAll = function () {
