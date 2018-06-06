@@ -31,7 +31,7 @@ div.jsoneditor-readonly {
 }
 
 div.jsoneditor-empty {
-  border-color: #d3d3d3;
+  border-color: #808080;
   border-style: dashed;
   border-radius: 2px;
 }
@@ -39,7 +39,7 @@ div.jsoneditor-empty {
 div.jsoneditor-field.jsoneditor-empty::after,
 div.jsoneditor-value.jsoneditor-empty::after {
   pointer-events: none;
-  color: #d3d3d3;
+  color: #808080;
   font-size: 8pt;
 }
 
@@ -273,7 +273,7 @@ textarea.jsoneditor-text {
 
 tr.jsoneditor-highlight,
 tr.jsoneditor-selected {
-  background-color: #d3d3d3;
+  background-color: #f3f3f3;
 }
 
 tr.jsoneditor-selected button.jsoneditor-dragarea,
