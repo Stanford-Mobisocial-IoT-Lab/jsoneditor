@@ -1392,6 +1392,10 @@ Node.prototype._updateDomValue = function () {
     else if (isUrl && this.editable.value) {
       domValue.title = translate('openUrl');
     }
+    else if (isEmpty) {
+      var title = Node._findTitle(this.schema, this.getName());
+      domValue.title = title ? title : '';
+    }
     else {
       domValue.title = '';
     }
@@ -1914,6 +1918,7 @@ Node.onDragEnd = function (nodes, event) {
     oldSelection: editor.drag.oldSelection,
     newSelection: editor.getDomSelection(),
     oldBeforeNode: editor.drag.oldBeforeNode,
+
     newBeforeNode: beforeNode
   };
 
@@ -2251,6 +2256,23 @@ Node._findSchema = function (schema, path) {
 
   }
   return foundSchema
+};
+
+/**
+ * Return the part of a JSON schema matching given path.
+ * @param {Object} schema
+ * @param {String} propertyName
+ * @return {Object | null}
+ * @private
+ */
+Node._findTitle = function (schema, propertyName) {
+  if (schema.properties && schema.properties[propertyName])
+    return schema.properties[propertyName].title;
+  if (schema.additionalProperties)
+    return Node._findTitle(schema.additionalProperties, propertyName);
+  if (schema.items)
+    return Node._findTitle(schema.items, propertyName);
+  return null;
 };
 
 /**
